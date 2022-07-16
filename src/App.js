@@ -1,6 +1,11 @@
 import React from 'react'
 import CoinTable from './Component/Table/Table'
 import News from './Component/News/News'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
@@ -8,8 +13,18 @@ function App() {
   return (
     <div className="App">
       
-        <News />  
-        <CoinTable />
+        
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={< News/>} />
+        
+        
+        <Route path="teams" element={<CoinTable />} />
+          
+          
+      
+    </Routes>
+  </BrowserRouter>
       
     </div>
   );
